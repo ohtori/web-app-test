@@ -4,7 +4,7 @@ function App() {
   const [serverData, setServerData] = useState({ok: null, result: []});
   // @ts-ignore:next-line
   useEffect(() => {
-    fetch('https://api.telegram.org/bot5705683065:AAEKv_FvBf83a9m4JmwAJM_qwEvRXcJ6rf4/getUpdates')
+    fetch('https://shielded-springs-37865.herokuapp.com/secret-path/start')
       .then(res => res.json())
       .then(data => setServerData(data))
       .catch(e => e.message)

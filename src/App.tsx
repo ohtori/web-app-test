@@ -3,7 +3,8 @@ import { useEffect, useState } from "react";
 function App() {
   useEffect(() => {
       // @ts-ignore:next-line
-    console.log(window.Telegram.WebApp);
+      console.log(window.Telegram.WebApp);
+      
   });
 
   return (
@@ -20,7 +21,7 @@ function App() {
             <li>
               {
                 // @ts-ignore:next-line
-                JSON.stringify(window.Telegram.WebApp, null, '\t')
+                <pre>{JSON.stringify(window.Telegram.WebApp, null, '\t')}</pre>
               }
             </li>
           </ul>

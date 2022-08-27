@@ -20,7 +20,7 @@ function App() {
             <li>
               {
                 // @ts-ignore:next-line
-                JSON.stringify(window.Telegram.WebApp)
+                JSON.stringify(window.Telegram.WebApp, null, '\t')
               }
             </li>
           </ul>

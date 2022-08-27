@@ -1,13 +1,9 @@
 import { useEffect, useState } from "react";
 
 function App() {
-  const [serverData, setServerData] = useState({ok: null, result: []});
-  // @ts-ignore:next-line
   useEffect(() => {
-    fetch('https://shielded-springs-37865.herokuapp.com/secret-path/start')
-      .then(res => res.json())
-      .then(data => setServerData(data))
-      .catch(e => e.message)
+      // @ts-ignore:next-line
+    console.log(window.Telegram.WebApp);
   });
 
   return (
@@ -21,7 +17,12 @@ function App() {
         <div className='container'>
           <h2>Messages List</h2>
           <ul className='messages-list'>
-            {serverData.result.map((message: {message: any}) => <li>{JSON.stringify(message.message, null, 2)}</li>)}
+            <li>
+              {
+                // @ts-ignore:next-line
+                JSON.stringify(window.Telegram.WebApp)
+              }
+            </li>
           </ul>
         </div>
       </main>

@@ -18,10 +18,7 @@ Object.defineProperty(checkDataStorage, 'userID', {
 
 function App() {
   return (
-    ( 
-      //botToken === urlBotToken
-      checkDataStorage.userID
-    ) ? 
+    (botToken === urlBotToken && checkDataStorage.userID) ? 
       <>
         <header className="header">
           <div className='container'>

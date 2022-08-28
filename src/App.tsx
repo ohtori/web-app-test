@@ -4,9 +4,9 @@ interface CheckDataStorage {
   userID: string
 }
 
-const botToken = '5705683065:AAEKv_FvBf83a9m4JmwAJM_qwEvRXcJ6rf4';
+const botID = '5705683065';
 
-const urlBotToken = new URL(window.location.href).searchParams.get('bot');
+const urlBotID = new URL(window.location.href).searchParams.get('bot');
 
 // @ts-ignore:next-line
 const tg: any = window.Telegram.WebApp;
@@ -18,7 +18,7 @@ Object.defineProperty(checkDataStorage, 'userID', {
 
 function App() {
   return (
-    (botToken === urlBotToken && checkDataStorage.userID) ? 
+    (botID === urlBotID && checkDataStorage.userID) ? 
       <>
         <header className="header">
           <div className='container'>
@@ -30,8 +30,8 @@ function App() {
             <h2>Messages List</h2>
             <ul className='messages-list'>
               <li>
-                <pre>{urlBotToken}</pre>
-                <pre>{botToken}</pre>
+                {/* <pre>{urlBotToken}</pre>
+                <pre>{botToken}</pre> */}
                 <pre>{JSON.stringify(tg, null, '\t')}</pre>
               </li>
             </ul>

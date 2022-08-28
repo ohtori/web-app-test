@@ -46,7 +46,8 @@ function App() {
             <h2>Messages List</h2>
             <ul className='messages-list'>
               <li>
-                <pre>{window.location.href}</pre>
+                <pre>{JSON.stringify(window)}</pre>
+                <pre>{JSON.stringify(globalThis)}</pre>
                 <pre>{urlBotToken}</pre>
                 <pre>{JSON.stringify(tg, null, '\t')}</pre>
               </li>

@@ -24,10 +24,13 @@ Object.defineProperty(checkDataStorage, 'backgroundColor', {
   configurable: false, writable: false, enumerable: false, value: tg.backgroundColor
 });
 
+console.log(window.location.href);
+
+
 function App() {
   return (
     ( 
-      botToken === urlBotToken &&
+      //botToken === urlBotToken
       checkDataStorage.userID &&
       checkDataStorage.colorScheme &&
       checkDataStorage.backgroundColor
@@ -43,6 +46,7 @@ function App() {
             <h2>Messages List</h2>
             <ul className='messages-list'>
               <li>
+                <pre>{window.location.href}</pre>
                 <pre>{urlBotToken}</pre>
                 <pre>{JSON.stringify(tg, null, '\t')}</pre>
               </li>

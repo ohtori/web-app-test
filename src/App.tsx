@@ -2,8 +2,6 @@ import { useEffect } from "react";
 
 interface CheckDataStorage {
   userID: string
-  colorScheme: string
-  backgroundColor: string
 }
 
 const botToken = '5705683065:AAEKv_FvBf83a9m4JmwAJM_qwEvRXcJ6rf4';
@@ -17,12 +15,6 @@ const checkDataStorage: CheckDataStorage = {} as CheckDataStorage;
 Object.defineProperty(checkDataStorage, 'userID', {
   configurable: false, writable: false, enumerable: false, value: tg.initDataUnsafe?.user?.id
 });
-Object.defineProperty(checkDataStorage, 'colorScheme', {
-  configurable: false, writable: false, enumerable: false, value: tg.initDataUnsafe?.hash
-});
-Object.defineProperty(checkDataStorage, 'backgroundColor', {
-  configurable: false, writable: false, enumerable: false, value: tg.backgroundColor
-});
 
 console.log(window.location.href);
 
@@ -31,9 +23,7 @@ function App() {
   return (
     ( 
       //botToken === urlBotToken
-      checkDataStorage.userID &&
-      checkDataStorage.colorScheme &&
-      checkDataStorage.backgroundColor
+      checkDataStorage.userID
     ) ? 
       <>
         <header className="header">
@@ -46,8 +36,8 @@ function App() {
             <h2>Messages List</h2>
             <ul className='messages-list'>
               <li>
-                <pre>{JSON.stringify(window)}</pre>
-                <pre>{JSON.stringify(globalThis)}</pre>
+                <pre>{globalThis.location.href}</pre>
+                <pre>{globalThis.location.href}</pre>
                 <pre>{urlBotToken}</pre>
                 <pre>{JSON.stringify(tg, null, '\t')}</pre>
               </li>

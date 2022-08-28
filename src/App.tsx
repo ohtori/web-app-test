@@ -16,9 +16,6 @@ Object.defineProperty(checkDataStorage, 'userID', {
   configurable: false, writable: false, enumerable: false, value: tg.initDataUnsafe?.user?.id
 });
 
-console.log(window.location.href);
-
-
 function App() {
   return (
     ( 
@@ -36,9 +33,8 @@ function App() {
             <h2>Messages List</h2>
             <ul className='messages-list'>
               <li>
-                <pre>{globalThis.location.href}</pre>
-                <pre>{globalThis.location.href}</pre>
                 <pre>{urlBotToken}</pre>
+                <pre>{botToken}</pre>
                 <pre>{JSON.stringify(tg, null, '\t')}</pre>
               </li>
             </ul>

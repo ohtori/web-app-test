@@ -4,23 +4,23 @@ interface CheckDataStorage {
   userID: string
 }
 
-const botID = '5705683065';
+// const botID = '5705683065';
 
-const urlBotID = new URL(window.location.href).searchParams.get('bot');
+// const urlBotID = new URL(window.location.href).searchParams.get('bot');
 
 const sendData = (data: string) => tg.sendData(data);
 
 // @ts-ignore:next-line
 const tg: any = window.Telegram.WebApp;
 
-const checkDataStorage: CheckDataStorage = {} as CheckDataStorage;
-Object.defineProperty(checkDataStorage, 'userID', {
-  configurable: false, writable: false, enumerable: false, value: tg.initDataUnsafe?.user?.id
-});
+// const checkDataStorage: CheckDataStorage = {} as CheckDataStorage;
+// Object.defineProperty(checkDataStorage, 'userID', {
+//   configurable: false, writable: false, enumerable: false, value: tg.initDataUnsafe?.user?.id
+// });
 
 function App() {
   return (
-    (botID === urlBotID && checkDataStorage.userID) ? 
+    // (botID === urlBotID && checkDataStorage.userID) ? 
       <>
         <header className="header">
           <div className='container'>
@@ -36,12 +36,12 @@ function App() {
                 <pre>{botToken}</pre> */}
                 <pre>{JSON.stringify(tg, null, '\t')}</pre>
               </li>
-              <button className="btn" onClick={() => sendData('Some data')}></button>
             </ul>
+            <button className="btn" onClick={() => sendData('Some data')}>Send data</button>
           </div>
         </main>
       </>
-    : null
+    // : null
   );
 }
 

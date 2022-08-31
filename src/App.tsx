@@ -16,7 +16,7 @@ const sendData = (data: string) => {
 
 // @ts-ignore:next-line
 const tg: any = window.Telegram.WebApp;
-
+tg.MainButton.enable();
 tg.MainButton.show();
 tg.onEvent('mainButtonClicked', function(){
 	tg.sendData("some string that we need to send"); 

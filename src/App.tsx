@@ -47,7 +47,7 @@ function App() {
                 <pre>{JSON.stringify(tg, null, '\t')}</pre>
               </li>
             </ul>
-            <button className="btn" onClick={tg.senData('Data from html btn')}>Send data</button>
+            <button className="btn" onClick={tg.sendData('Data from html btn')}>Send data</button>
           </div>
         </main>
       </>

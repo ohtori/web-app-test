@@ -8,10 +8,20 @@ interface CheckDataStorage {
 
 // const urlBotID = new URL(window.location.href).searchParams.get('bot');
 
-const sendData = (data: string) => tg.sendData(data);
+const sendData = (data: string) => {
+  console.log(data);
+  
+  tg.sendData(data)
+};
 
 // @ts-ignore:next-line
 const tg: any = window.Telegram.WebApp;
+
+tg.MainButton.show();
+tg.onEvent('mainButtonClicked', function(){
+	tg.sendData("some string that we need to send"); 
+	//при клике на основную кнопку отправляем данные в строковом виде
+});
 
 // const checkDataStorage: CheckDataStorage = {} as CheckDataStorage;
 // Object.defineProperty(checkDataStorage, 'userID', {
@@ -37,7 +47,6 @@ function App() {
                 <pre>{JSON.stringify(tg, null, '\t')}</pre>
               </li>
             </ul>
-            <button className="btn" onClick={() => sendData('Some data')}>Send data</button>
           </div>
         </main>
       </>

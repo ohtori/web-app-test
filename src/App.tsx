@@ -8,6 +8,8 @@ const botID = '5705683065';
 
 const urlBotID = new URL(window.location.href).searchParams.get('bot');
 
+const sendData = (data: string) => tg.sendData(data);
+
 // @ts-ignore:next-line
 const tg: any = window.Telegram.WebApp;
 
@@ -34,6 +36,7 @@ function App() {
                 <pre>{botToken}</pre> */}
                 <pre>{JSON.stringify(tg, null, '\t')}</pre>
               </li>
+              <button className="btn" onClick={() => sendData('Some data')}></button>
             </ul>
           </div>
         </main>
